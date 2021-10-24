@@ -1,6 +1,5 @@
 #include <vector>
 
-
 struct Stats
 {
     float average = 0.0;
@@ -10,11 +9,5 @@ struct Stats
 
 namespace Statistics {
     template <typename T>
-    Stats ComputeStatistics(const std::vector<T>& );
+    Stats ComputeStatistics(const std::initializer_list<T>& );
 }
-
-
-
-//namespace Statistics {
-  //  Stats ComputeStatistics(const std::vector<___>& );
-//}
