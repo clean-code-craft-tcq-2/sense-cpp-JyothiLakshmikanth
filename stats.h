@@ -24,19 +24,19 @@ virtual void setLEDGlow(bool value) {}
 class EmailAlert : public IAlerter
 {
     public:
-    bool emailsend = false;
+    bool emailSent = false;
     void setEmailSend(bool value)
     {
-      emailsend = value;
+      emailSent = value;
     }
 };
 class LEDAlert : public IAlerter
 {
     public:
-    bool ledglow = false;
+    bool ledGlows = false;
     void setLEDGlow(bool value)
     {
-       ledglow = value;
+       ledGlows = value;
     }
 };
 
