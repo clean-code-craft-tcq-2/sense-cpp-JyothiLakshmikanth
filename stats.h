@@ -17,8 +17,8 @@ namespace Statistics {
 class IAlerter
 {
 public:
-virtual void setEmailSend(bool value) {};
-virtual void setLEDGlow(bool value) {};
+virtual void setEmailSend(bool value) {}
+virtual void setLEDGlow(bool value) {}
 };
 
 class EmailAlert : public IAlerter
