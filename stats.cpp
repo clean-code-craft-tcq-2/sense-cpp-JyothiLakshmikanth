@@ -1,11 +1,10 @@
 #include "stats.h"
 
-template <typename T>
-auto findAverage(const std::vector<T>& givenData)
+float findAverage(const std::vector<float>& givenData)
 {
     float totalSum=0;
     size_t dataSize = givenData.size();
-    typename ::std::vector<T>::const_iterator givenDataIt = givenData.begin();
+    ::std::vector<float>::const_iterator givenDataIt = givenData.begin();
     for(;givenDataIt != givenData.end(); ++givenDataIt)
     {
         totalSum = totalSum + *givenDataIt;
@@ -13,37 +12,35 @@ auto findAverage(const std::vector<T>& givenData)
     return static_cast<float>(totalSum/dataSize);
 }
 
-template <typename T>
-auto finMax(const std::vector<T>& givenData)
+float finMax(const std::vector<float>& givenData)
 {
-    typename ::std::vector<T>::const_iterator givenDataIt = givenData.begin();
-    auto initialValue = *givenDataIt;
+    ::std::vector<float>::const_iterator givenDataIt = givenData.begin();
+    float maxValue = *givenDataIt;
     for(;givenDataIt != givenData.end(); ++givenDataIt)
     {
-        if(initialValue < *(++givenDataIt))
+        if(maxValue < *(++givenDataIt))
         {
-            initialValue = *(++givenDataIt);
+            maxValue = *(++givenDataIt);
         }
     }
-   return initialValue;
-}
-template <typename T>
-auto finMin(const std::vector<T>& givenData)
-{
-    typename ::std::vector<T>::const_iterator givenDataIt = givenData.begin();
-    auto initialValue = *givenDataIt;
-    for(;givenDataIt != givenData.end(); ++givenDataIt)
-    {
-        if(initialValue > *(++givenDataIt))
-        {
-            initialValue = *(++givenDataIt);
-        }
-    }
-    return initialValue;
+   return maxValue;
 }
 
-template <typename T>
-Stats Statistics::ComputeStatistics(const std::vector<T>& givenData) 
+float finMin(const std::vector<float>& givenData)
+{
+    ::std::vector<float>::const_iterator givenDataIt = givenData.begin();
+    float minValue = *givenDataIt;
+    for(;givenDataIt != givenData.end(); ++givenDataIt)
+    {
+        if(minValue > *(++givenDataIt))
+        {
+            minValue = *(++givenDataIt);
+        }
+    }
+    return minValue;
+}
+
+Stats Statistics::ComputeStatistics(const std::vector<float>& givenData) 
 {
     //Implement statistics here
     struct Stats obj1;
