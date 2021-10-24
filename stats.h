@@ -1,4 +1,6 @@
 #include <vector>
+#include <math.h>
+#include <numeric.h>
 
 struct Stats
 {
@@ -8,6 +10,5 @@ struct Stats
 };
 
 namespace Statistics {
-    template <typename T>
-    Stats ComputeStatistics(const std::vector<T>& data);
+    Stats ComputeStatistics(const std::vector<float>& data);
 }
