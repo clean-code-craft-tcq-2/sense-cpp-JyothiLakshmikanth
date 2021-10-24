@@ -8,7 +8,6 @@ float findAverage(const std::vector<float>& givenData)
     ::std::vector<float>::const_iterator givenDataIt = givenData.begin();
     for(;givenDataIt != givenData.end(); ++givenDataIt)
     {
-        ::std::cout<<"findAverage givenDataIt - "<<*givenDataIt<<endl;
         totalSum += *givenDataIt;
     }
     return (totalSum/static_cast<float>(dataSize));
