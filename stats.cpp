@@ -49,4 +49,5 @@ Stats Statistics::ComputeStatistics(const std::vector<T>& givenData)
     obj1.average = findAverage(givenData);
     obj1.max = finMax(givenData);
     obj1.min = finMin(givenData);
+    return obj1;
 }
