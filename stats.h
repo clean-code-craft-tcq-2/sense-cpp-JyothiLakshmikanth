@@ -1,6 +1,6 @@
 #include <vector>
 #include <math.h>
-#include <numeric.h>
+#include <numeric>
 
 struct Stats
 {
