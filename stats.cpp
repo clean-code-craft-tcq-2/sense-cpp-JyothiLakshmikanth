@@ -29,10 +29,9 @@ Stats Statistics::ComputeStatistics(const std::vector<float>& givenData)
 void StatsAlerter::checkAndAlert(const std::vector<float>& data)
 {
     float maxValue =  *max_element(data.begin(), data.end());
-    ::std::cout<<"thresholdValue - "<<thresholdValue<<" maxValue - "<<maxValue<<endl;
     if(thresholdValue < maxValue)
     {
-        alerters.setLEDGlow(true);
-        alerters.setEmailSend(true);
+        alerters->setLEDGlow(true);
+        alerters->setEmailSend(true);
     }
 }
