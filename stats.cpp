@@ -53,7 +53,7 @@ Stats Statistics::ComputeStatistics(const std::vector<float>& givenData)
     return obj1;
 }
 
-void StatsAlerter::checkAndAlert(const std::vector<float>& data)
+/*void StatsAlerter::checkAndAlert(const std::vector<float>& data)
 {
   //  EmailAlert emailAlert;
     //LEDAlert ledAlert;
@@ -64,4 +64,4 @@ void StatsAlerter::checkAndAlert(const std::vector<float>& data)
        // emailAlert.setAlert(true);
         //ledAlert.setAlert(true);
     }
-}
+}*/
