@@ -41,3 +41,16 @@ TEST_CASE("raises alerts when max is greater than threshold") {
     REQUIRE_FALSE(emailAlert.emailSent);
     REQUIRE_FALSE(ledAlert.ledGlows);
 }
+
+TEST_CASE("donot raise alerts when max is less than threshold") {
+    EmailAlert emailAlert;
+    LEDAlert ledAlert;
+    std::vector<IAlerter*> alerters = {&emailAlert, &ledAlert};
+    
+    const float maxThreshold = 10.2;
+    StatsAlerter statsAlerter(maxThreshold, alerters);
+    statsAlerter.checkAndAlert({9.8, 3.2, 4.5, 6.7});
+
+    REQUIRE_FALSE(emailAlert.emailSent);
+    REQUIRE_FALSE(ledAlert.ledGlows);
+}
