@@ -46,8 +46,12 @@ template <typename T>
 Stats Statistics::ComputeStatistics(const std::vector<T>& givenData) 
 {
     //Implement statistics here
-    obj1.average = findAverage(givenData);
-    obj1.max = finMax(givenData);
-    obj1.min = finMin(givenData);
+    struct Stats obj1;
+    if(!givenData.empty())
+    {
+        obj1.average = findAverage(givenData);
+        obj1.max = finMax(givenData);
+        obj1.min = finMin(givenData);
+    }
     return obj1;
 }
