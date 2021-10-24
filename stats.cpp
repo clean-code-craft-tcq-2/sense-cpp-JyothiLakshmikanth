@@ -1,49 +1,52 @@
 #include "stats.h"
 
-Stats Statistics::ComputeStatistics(const std::vector<___>& givenData) {
-    //Implement statistics here
-    float average, max, min, totalSum=0;
+template <typename T>
+auto findAverage(const std::vector<T>& givenData)
+{
+    float totalSum=0;
     size_t dataSize = givenData.size();
-    void findAverage()
+    typename vector<T>::const_iterator givenDataIt = givenData.begin();
+    for(;givenDataIt != givenData.end(); ++givenDataIt)
     {
-        totalSum = findSum();
-        average = static_cast<float>(totalSum/dataSize);
+        totalSum = totalSum + *givenDataIt;
     }
-    
-    float findSum()
+    return static_cast<float>(totalSum/dataSize);
+}
+
+template <typename T>
+auto finMax(const std::vector<T>& givenData)
+{
+    typename vector<T>::const_iterator givenDataIt = givenData.begin();
+    auto initialValue = *givenDataIt;
+    for(;givenDataIt != givenData.end(); ++givenDataIt)
     {
-        float sum = 0;
-        std::vector<___>::const_iterator givenDataIt = givenData.begin();
-        for(;givenDataIt != givenData.end(); ++givenDataIt)
+        if(initialValue < *(++givenDataIt))
         {
-            sum = sum + *givenDataIt;
+            initialValue = *(++givenDataIt);
         }
-        return sum;
     }
-    void finMax()
+   return initialValue;
+}
+template <typename T>
+auto finMin(const std::vector<T>& givenData)
+{
+    typename vector<T>::const_iterator givenDataIt = givenData.begin();
+    auto initialValue = *givenDataIt;
+    for(;givenDataIt != givenData.end(); ++givenDataIt)
     {
-        std::vector<___>::const_iterator givenDataIt = givenData.begin();
-        auto initialValue = *givenDataIt;
-        for(;givenDataIt != givenData.end(); ++givenDataIt)
+        if(initialValue > *(++givenDataIt))
         {
-            if(initialValue < *(++givenDataIt))
-            {
-                initialValue = *(++givenDataIt);
-            }
+            initialValue = *(++givenDataIt);
         }
-        max = initialValue;
     }
-     void finMin()
-    {
-        std::vector<___>::const_iterator givenDataIt = givenData.begin();
-        auto initialValue = *givenDataIt;
-        for(;givenDataIt != givenData.end(); ++givenDataIt)
-        {
-            if(initialValue > *(++givenDataIt))
-            {
-                initialValue = *(++givenDataIt);
-            }
-        }
-        min = initialValue;
-    }
+    return initialValue;
+}
+
+template <typename T>
+Stats Statistics::ComputeStatistics(const std::vector<T>& givenData) 
+{
+    //Implement statistics here
+    obj1.average = findAverage(givenData);
+    obj1.max = finMax(givenData);
+    obj1.min = finMin(givenData);
 }
