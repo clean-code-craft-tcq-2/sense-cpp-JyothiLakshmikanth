@@ -52,3 +52,16 @@ Stats Statistics::ComputeStatistics(const std::vector<float>& givenData)
     }
     return obj1;
 }
+
+void StatsAlerter::checkAndAlert(const std::vector<float>& data)
+{
+  //  EmailAlert emailAlert;
+    //LEDAlert ledAlert;
+    struct Stats statistics = Statistics::ComputeStatistics(data);
+    float maxValue = statistics.max;
+    if(thresholdValue < maxValue)
+    {
+       // emailAlert.setAlert(true);
+        //ledAlert.setAlert(true);
+    }
+}
