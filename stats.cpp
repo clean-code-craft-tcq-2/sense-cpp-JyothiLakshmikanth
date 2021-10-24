@@ -5,7 +5,7 @@ auto findAverage(const std::vector<T>& givenData)
 {
     float totalSum=0;
     size_t dataSize = givenData.size();
-    typename vector<T>::const_iterator givenDataIt = givenData.begin();
+    typename ::std::vector<T>::const_iterator givenDataIt = givenData.begin();
     for(;givenDataIt != givenData.end(); ++givenDataIt)
     {
         totalSum = totalSum + *givenDataIt;
@@ -16,7 +16,7 @@ auto findAverage(const std::vector<T>& givenData)
 template <typename T>
 auto finMax(const std::vector<T>& givenData)
 {
-    typename vector<T>::const_iterator givenDataIt = givenData.begin();
+    typename ::std::vector<T>::const_iterator givenDataIt = givenData.begin();
     auto initialValue = *givenDataIt;
     for(;givenDataIt != givenData.end(); ++givenDataIt)
     {
@@ -30,7 +30,7 @@ auto finMax(const std::vector<T>& givenData)
 template <typename T>
 auto finMin(const std::vector<T>& givenData)
 {
-    typename vector<T>::const_iterator givenDataIt = givenData.begin();
+    typename ::std::vector<T>::const_iterator givenDataIt = givenData.begin();
     auto initialValue = *givenDataIt;
     for(;givenDataIt != givenData.end(); ++givenDataIt)
     {
