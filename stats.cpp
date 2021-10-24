@@ -26,15 +26,13 @@ Stats Statistics::ComputeStatistics(const std::vector<float>& givenData)
     return obj1;
 }
 
-/*void StatsAlerter::checkAndAlert(const std::vector<float>& data)
+void StatsAlerter::checkAndAlert(const std::vector<float>& data)
 {
-  //  EmailAlert emailAlert;
-    //LEDAlert ledAlert;
-    struct Stats statistics = Statistics::ComputeStatistics(data);
-    float maxValue = statistics.max;
+    float maxValue =  *max_element(data.begin(), data.end());
+    ::std::cout<<"thresholdValue - "<<thresholdValue<<" maxValue - "<<maxValue<<endl;
     if(thresholdValue < maxValue)
     {
-       // emailAlert.setAlert(true);
-        //ledAlert.setAlert(true);
+        alerters.setLEDGlow(true);
+        alerters.setEmailSend(true);
     }
-}*/
+}
