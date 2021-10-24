@@ -15,7 +15,7 @@ namespace Statistics {
     Stats ComputeStatistics(const std::vector<float>& data);
 }
 
-class StatsAlerter
+/*class StatsAlerter
 {
     private:
     float thresholdValue = NAN;
@@ -23,4 +23,5 @@ class StatsAlerter
     public:
     StatsAlerter (float value, std::vector<IAlerter*> a_v): thresholdValue(value), alerters(a_v){}
     void checkAndAlert(const std::vector<float>& data);
-}
+};
+*/
